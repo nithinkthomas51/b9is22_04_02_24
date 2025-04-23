@@ -4,7 +4,9 @@
         <script>
             let c=()=>{
                 let i = document.getElementById("in").value;
-                alert(i)
+                if (parseInt(i) > 15) {
+                    alert("Baggage is overweight")
+                }
             }
         </script>
     </head>
