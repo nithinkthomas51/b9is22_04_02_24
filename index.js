@@ -30,9 +30,8 @@ let findSum = () => {
 }
 
 let f4 = (a, b, l) => {
-    let numbers = l.split(",");
     let sum = 0;
-    numbers.forEach((n) => {
+    l.forEach((n) => {
         if (n % parseInt(a) === 0 || n % parseInt(b) === 0) {
             sum += parseInt(n);
         }
@@ -43,13 +42,21 @@ let f4 = (a, b, l) => {
 let ex4 = () => {
     let a = document.getElementById('a1').value;
     let b = document.getElementById('b1').value;
-    let l = document.getElementById('l').value;
-    let multiples = [a, b];
-    let numbers = l.split(",");
+    let l = document.getElementById('l').value.split(",");
 
-    // let sum = f4(a, b, l);
-    let sum = f6(multiples, numbers);
+    let sum = f4(a, b, l);
     alert(sum);
+}
+
+let f5 = (a, l) => {
+    return numbers.filter( (x) => x % a[0] === 0 || x % a[1] === 0)
+                  .reduce( (acc, x) => acc + parseInt(x), 0);
+}
+
+let ex5 = () => {
+    let multiples = document.getElementById('a2').value.split(",");
+    let numbers = document.getElementById('l1').value.split(",");
+    alert(f5(multiples, numbers));
 }
 
 let f6 = (multiples, numbers) => {
@@ -57,11 +64,8 @@ let f6 = (multiples, numbers) => {
                   .reduce( (acc, x) => acc + parseInt(x), 0);
 }
 
-let ex5 = () => {
-    let a = document.getElementById('a2').value;
-    let l = document.getElementById('l1').value;
-    let multiples = a.split(",");
-    let numbers = l.split(",");
-    let sum = f6(multiples, numbers);
-    alert(sum);
+let ex6 = () => {
+    let multiples = document.getElementById('a3').value.split(",");
+    let numbers = document.getElementById('l3').value.split(",");
+    alert(f6(multiples, numbers));
 }
