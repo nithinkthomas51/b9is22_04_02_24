@@ -30,15 +30,15 @@ let findSum = () => {
 }
 
 let f4 = (a, b, l) => {
-    let multiples = [a, b];
-    return f6(multiples, l);
-    // let sum = 0;
-    // l.forEach((n) => {
-    //     if (n % parseInt(a) === 0 || n % parseInt(b) === 0) {
-    //         sum += parseInt(n);
-    //     }
-    // });
-    // return sum;
+    // let multiples = [a, b];
+    // return f6(multiples, l);
+    let sum = 0;
+    l.forEach((n) => {
+        if (n % parseInt(a) === 0 || n % parseInt(b) === 0) {
+            sum += parseInt(n);
+        }
+    });
+    return sum;
 }
 
 let ex4 = () => {
@@ -50,16 +50,16 @@ let ex4 = () => {
     alert(sum);
 }
 
-// let f5 = (a, l) => {
-//     return l.filter( (x) => x % a[0] === 0 || x % a[1] === 0)
-//                   .reduce( (acc, x) => acc + parseInt(x), 0);
-// }
+let f5 = (a, l) => {
+    return l.filter( (x) => x % a[0] === 0 || x % a[1] === 0)
+                  .reduce( (acc, x) => acc + parseInt(x), 0);
+}
 
 let ex5 = () => {
     let multiples = document.getElementById('a2').value.split(",");
     let numbers = document.getElementById('l1').value.split(",");
-    alert(f6(multiples, numbers));
-    // alert(f5(multiples, numbers));
+    // alert(f6(multiples, numbers));
+    alert(f5(multiples, numbers));
 }
 
 let f6 = (multiples, numbers) => {
