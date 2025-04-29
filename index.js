@@ -52,12 +52,15 @@ let ex4 = () => {
 
 let f5 = (a, l) => {
     return l.filter( (x) => x % a[0] === 0 || x % a[1] === 0)
-                  .reduce( (acc, x) => acc + parseInt(x), 0);
+            .reduce( (acc, x) => acc + parseInt(x), 0);
 }
 
 let ex5 = () => {
     let multiples = document.getElementById('a2').value.split(",");
     let numbers = document.getElementById('l1').value.split(",");
+    if (multiples.length != 2) {
+        return;
+    }
     // alert(f6(multiples, numbers));
     alert(f5(multiples, numbers));
 }
