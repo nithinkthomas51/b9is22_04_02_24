@@ -28,3 +28,23 @@ let findSum = () => {
     let sum = sumOfMultiplesOfAorBBelowN(a, b, n);
     alert(sum);
 }
+
+let f4 = (a, b, l) => {
+    let numbers = l.split(",");
+    let sum = 0;
+    numbers.forEach((n) => {
+        if (n % parseInt(a) === 0 || n % parseInt(b) === 0) {
+            sum += parseInt(n);
+        }
+    });
+    return sum;
+}
+
+let ex4 = () => {
+    let a = document.getElementById('a1').value;
+    let b = document.getElementById('b1').value;
+    let l = document.getElementById('l').value;
+
+    let sum = f4(a, b, l);
+    alert(sum);
+}
