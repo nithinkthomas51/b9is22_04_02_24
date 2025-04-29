@@ -44,7 +44,24 @@ let ex4 = () => {
     let a = document.getElementById('a1').value;
     let b = document.getElementById('b1').value;
     let l = document.getElementById('l').value;
+    let multiples = [a, b];
+    let numbers = l.split(",");
 
-    let sum = f4(a, b, l);
+    // let sum = f4(a, b, l);
+    let sum = f6(multiples, numbers);
+    alert(sum);
+}
+
+let f6 = (multiples, numbers) => {
+    return numbers.filter( (x) => multiples.some( multiple => x % multiple === 0))
+                  .reduce( (acc, x) => acc + x, 0);
+}
+
+let ex5 = () => {
+    let a = document.getElementById('a2').value;
+    let l = document.getElementById('l2').value;
+    let multiples = a.split(",");
+    let numbers = l.split(",");
+    let sum = f6(multiples, numbers);
     alert(sum);
 }
