@@ -59,7 +59,7 @@ let f6 = (multiples, numbers) => {
 
 let ex5 = () => {
     let a = document.getElementById('a2').value;
-    let l = document.getElementById('l2').value;
+    let l = document.getElementById('l1').value;
     let multiples = a.split(",");
     let numbers = l.split(",");
     let sum = f6(multiples, numbers);
