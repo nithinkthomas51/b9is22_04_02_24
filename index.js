@@ -54,7 +54,7 @@ let ex4 = () => {
 
 let f6 = (multiples, numbers) => {
     return numbers.filter( (x) => multiples.some( multiple => x % multiple === 0))
-                  .reduce( (acc, x) => acc + x, 0);
+                  .reduce( (acc, x) => acc + parseInt(x), 0);
 }
 
 let ex5 = () => {
