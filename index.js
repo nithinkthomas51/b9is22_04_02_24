@@ -31,7 +31,7 @@ let findSum = () => {
 
 function f4(a, b, l) {
     let sum = 0;
-    for (let i = 1; i < l.length; i++) {
+    for (let i = 0; i < l.length; i++) {
         if (l[i] % a === 0 || l[i] % b === 0) {
             sum = sum + parseInt(l[i]);
         }
@@ -41,17 +41,24 @@ function f4(a, b, l) {
 }
 
 let ex4 = () => {
-    let a = document.getElementById('a1').value;
-    let b = document.getElementById('b1').value;
+    let a = parseInt(document.getElementById('a1').value);
+    let b = parseInt(document.getElementById('b1').value);
     let l = document.getElementById('l').value.split(",");
 
     let sum = f4(a, b, l);
     alert(sum);
 }
 
-let f5 = (a, l) => {
-    return l.filter( (x) => x % a[0] === 0 || x % a[1] === 0)
-            .reduce( (acc, x) => acc + parseInt(x), 0);
+let f5 = (multiples, numbers) => {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % multiples[0] === 0 || numbers[i] % multiples[1] === 0) {
+            sum = sum + parseInt(numbers[i]);
+        }
+    }
+    return sum;
+    // return numbers.filter( (x) => x % multiples[0] === 0 || x % multiples[1] === 0)
+    //         .reduce( (acc, x) => acc + parseInt(x), 0);
 }
 
 let ex5 = () => {
@@ -65,8 +72,18 @@ let ex5 = () => {
 }
 
 let f6 = (multiples, numbers) => {
-    return numbers.filter( (x) => multiples.some( multiple => x % multiple === 0))
-                  .reduce( (acc, x) => acc + parseInt(x), 0);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = 0; j < multiples.length; j++) {
+            if (numbers[i] % multiples[j] === 0) {
+                sum = sum + parseInt(numbers[i]);
+                break;
+            }
+        }
+    }
+    return sum;
+    // return numbers.filter( (x) => multiples.some( multiple => x % multiple === 0))
+    //               .reduce( (acc, x) => acc + parseInt(x), 0);
 }
 
 let ex6 = () => {
