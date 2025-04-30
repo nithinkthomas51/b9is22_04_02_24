@@ -29,16 +29,15 @@ let findSum = () => {
     alert(sum);
 }
 
-let f4 = (a, b, l) => {
-    // let multiples = [a, b];
-    // return f6(multiples, l);
+function f4(a, b, l) {
     let sum = 0;
-    l.forEach((n) => {
-        if (n % parseInt(a) === 0 || n % parseInt(b) === 0) {
-            sum += parseInt(n);
+    for (let i = 1; i < l.length; i++) {
+        if (l[i] % a === 0 || l[i] % b === 0) {
+            sum = sum + parseInt(l[i]);
         }
-    });
+    }
     return sum;
+
 }
 
 let ex4 = () => {
