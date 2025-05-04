@@ -7,7 +7,7 @@ let c=() => {
 
 let sumOfMultiplesof3or5Below1000 = () => {
     let sum = sumOfMultiplesOfAorBBelowN(3, 5, 1000);
-    alert(sum);
+    document.getElementById('rex2').value = sum;
 }
 
 let sumOfMultiplesOfAorBBelowN = (a, b, n) => {
@@ -26,7 +26,7 @@ let findSum = () => {
     let n = document.getElementById('n').value;
 
     let sum = sumOfMultiplesOfAorBBelowN(a, b, n);
-    alert(sum);
+    document.getElementById('rex3').value = sum;
 }
 
 let f4 = (a, b, l) => {
@@ -47,7 +47,7 @@ let ex4 = () => {
     let l = document.getElementById('l').value.split(",");
 
     let sum = f4(a, b, l);
-    alert(sum);
+    document.getElementById('rex4').value = sum;
 }
 
 let f5 = (a, l) => {
@@ -62,7 +62,8 @@ let ex5 = () => {
         return;
     }
     // alert(f6(multiples, numbers));
-    alert(f5(multiples, numbers));
+    let sum = f5(multiples, numbers);
+    document.getElementById('rex5').value = sum;
 }
 
 let f6 = (multiples, numbers) => {
@@ -73,5 +74,6 @@ let f6 = (multiples, numbers) => {
 let ex6 = () => {
     let multiples = document.getElementById('a3').value.split(",");
     let numbers = document.getElementById('l3').value.split(",");
-    alert(f6(multiples, numbers));
+    let sum = f6(multiples, numbers);
+    document.getElementById('rex6').value = sum;
 }
