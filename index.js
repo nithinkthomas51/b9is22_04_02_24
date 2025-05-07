@@ -77,3 +77,24 @@ let ex6 = () => {
     let sum = f6(multiples, numbers);
     document.getElementById('rex6').value = sum;
 }
+
+// basket = {'egg':2, 'milk':1, 'apple':3}
+// prices = {'apple':1.69, 'egg':1.03, 'milk':2.14}
+
+let f7 = (basket, prices) => {
+
+    let cost = 0;
+    for (let product in basket) {
+        if (prices[product] !== undefined) {
+            cost += (basket[product] * prices[product]);
+        }
+    }
+    return cost;
+}
+
+let ex7 = () => {
+    let basket = {'egg':2, 'milk':1, 'apple':3};
+    let prices = {'apple':1.69, 'egg':1.03, 'milk':2.14};
+
+    alert(f7(basket, prices));
+}
