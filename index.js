@@ -116,5 +116,5 @@ let f7 = (cart, inventory) => {
 }
 
 let calculate = () => {
-    document.getElementById('totalPrice') = f7(basket, prices);
+    document.getElementById('totalPrice').value = f7(basket, prices);
 }
