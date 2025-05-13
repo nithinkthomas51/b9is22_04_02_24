@@ -90,6 +90,12 @@ let addProduct = () => {
     prices[productName] = price;
     document.getElementById("product").value = "";
     document.getElementById("price").value = "";
+
+    let productHtml = "";
+    for (let [obj, cost] in Object.entries(prices)) {
+        productHtml += "<p>" + obj + ": €" + cost + "<p> <br>";
+    }
+    document.getElementById("product-container").innerHTML = productHtml;
 }
 
 let addToCart = () => {
