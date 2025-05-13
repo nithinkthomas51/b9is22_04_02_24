@@ -81,20 +81,40 @@ let ex6 = () => {
 // basket = {'egg':2, 'milk':1, 'apple':3}
 // prices = {'apple':1.69, 'egg':1.03, 'milk':2.14}
 
-let f7 = (basket, prices) => {
+let basket = {};
+let prices = {};
+
+let addProduct = () => {
+    let productName = (document.getElementById("product").value).toLowerCase();
+    let price = parseFloat(document.getElementById("price").value);
+    prices[productName] = price;
+    document.getElementById("product").value = "";
+    document.getElementById("price").value = "";
+}
+
+let addToCart = () => {
+    let productBought = (document.getElementById("productBought").value).toLowerCase();
+    let quantity = parseInt(document.getElementById("quantity").value);
+    if (prices[productBought] === undefined) {
+        alert(productBought + " not in stock");
+        return;
+    }
+    basket[productBought] = quantity;
+    document.getElementById("productBought").value = "";
+    document.getElementById("quantity").value = 0;
+}
+
+let f7 = (cart, inventory) => {
 
     let cost = 0;
-    for (let product in basket) {
-        if (prices[product] !== undefined) {
-            cost += (basket[product] * prices[product]);
+    for (let product in cart) {
+        if (inventory[product] !== undefined) {
+            cost += (cart[product] * inventory[product]);
         }
     }
     return cost;
 }
 
-let ex7 = () => {
-    let basket = {'egg':2, 'milk':1, 'apple':3};
-    let prices = {'apple':1.69, 'egg':1.03, 'milk':2.14};
-
-    alert(f7(basket, prices));
+let calculate = () => {
+    document.getElementById('totalPrice') = f7(basket, prices);
 }
