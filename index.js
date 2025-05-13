@@ -92,8 +92,8 @@ let addProduct = () => {
     document.getElementById("price").value = "";
 
     let productHtml = "";
-    for (let [obj, cost] in Object.entries(prices)) {
-        productHtml += "<p>" + obj + ": €" + cost + "<p> <br>";
+    for (let [obj, cost] of Object.entries(prices)) {
+        productHtml += "<p>" + obj + " : €" + cost + "<p> <br>";
     }
     document.getElementById("product-container").innerHTML = productHtml;
 }
@@ -108,6 +108,11 @@ let addToCart = () => {
     basket[productBought] = quantity;
     document.getElementById("productBought").value = "";
     document.getElementById("quantity").value = 0;
+    let cartHTML = "";
+    for (let [obj, cost] of Object.entries(basket)) {
+        cartHTML += "<p>" + obj + " : €" + cost + "<p> <br>";
+    }
+    document.getElementById("cart-container").innerHTML = cartHTML;
 }
 
 let f7 = (cart, inventory) => {
