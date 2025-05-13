@@ -109,8 +109,8 @@ let addToCart = () => {
     document.getElementById("productBought").value = "";
     document.getElementById("quantity").value = 0;
     let cartHTML = "";
-    for (let [obj, cost] of Object.entries(basket)) {
-        cartHTML += "<div>" + obj + " : " + cost + "<div>";
+    for (let [obj, quantity] of Object.entries(basket)) {
+        cartHTML += "<div>" + obj + " : " + quantity + "<div>";
     }
     document.getElementById("cart-container").innerHTML = cartHTML;
 }
